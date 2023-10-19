@@ -208,7 +208,7 @@ function App() {
 // hace que todo el arbol de componentes se re-renderice, de esta forma lo evito.
 export function AutoCloseComponentHandler() {
   const { isLogoutModalShowing, closeLogoutModal } = useAutoCloseSession({
-    secondsToLogout: 60 * 30,
+    secondsToLogout: 60 * 5,
   })
 
   if (isLogoutModalShowing)

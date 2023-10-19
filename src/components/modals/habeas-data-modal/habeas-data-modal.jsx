@@ -27,7 +27,7 @@ export function HabeasDataModal({ closeModal, id }) {
   }, [user])
 
   return (
-    <ModalBackground closeModal={() => {}} onClick={(e) => e.stopPropagation()}>
+    <ModalBackground closeModal={() => {}} onClick={() => {}}>
       <div className={styles.modal}>
         <h4>Lorem Ipsum</h4>
         <p>

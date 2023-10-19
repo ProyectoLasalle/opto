@@ -11,7 +11,7 @@ const useAutoCloseSession = ({ secondsToLogout = 60 * 30 }) => {
   const timerIdRef = useRef(null)
   const user = useUser()
 
-  const mouseMove = useCallback(
+  const resetTimeout = useCallback(
     debounce(
       () => {
         setCurrentTimeWithoutMovingMouse(0)
@@ -40,11 +40,13 @@ const useAutoCloseSession = ({ secondsToLogout = 60 * 30 }) => {
       })
     }, 1000)
 
-    window.addEventListener('mousemove', mouseMove)
+    window.addEventListener('click', resetTimeout)
+    document.addEventListener('visibilitychange', resetTimeout)
 
     return () => {
       clearInterval(timerIdRef.current)
-      window.removeEventListener('mousemove', mouseMove)
+      window.removeEventListener('click', resetTimeout)
+      document.removeEventListener('visibilitychange', resetTimeout)
     }
   }, [user])
 
