@@ -9,6 +9,6 @@ export const tests = {
     name: 'Mirada Preferencial',
     slug: 'preferencial',
     desc: 'Lorem ipsum dolor sit, amet consectetur adipisicing elit. Quis, blanditiis quos? Pariatur illo error cupiditate provident aliquid doloribus tempora dolore',
-    src: 'https://drive.google.com/file/d/1rNkqJfeFwmmBkKv0OMVva_0C7I1qGBh_/view',
+    src: 'https://drive.google.com/file/d/1tiLUnb2YXEJ0mxAwLUWI9JN5E1hsN8_U/view?usp=sharing',
   },
 }

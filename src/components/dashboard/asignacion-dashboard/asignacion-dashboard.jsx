@@ -23,6 +23,8 @@ export function AsignacionDashboard() {
 
   const user = useUser()
 
+  console.log(state)
+
   const getPatients = useCallback(() => {
     dispatch({ type: 'setPatientsLoading' })
     getAllPatientsWithoutDoctor()
