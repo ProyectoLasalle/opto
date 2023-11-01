@@ -32,17 +32,19 @@ export function OpacidadGraphic() {
   ]
 
   const { state } = useContext(ResultsContext)
-  const {toPFD, targetRef} = usePDF()
+  const { toPFD, targetRef } = usePDF()
 
   console.log(state)
 
   useEffect(() => {
-    const max = Math.max(...state.graphic_open[selectedTab].NEstimulosAcertados)
+    const max = Math.max(...state.graphic_open.NEstimulosAcertados)
     setUmbralNEstimulosAcertados(max / 2)
-    const { ...rest } = state.graphic_open[selectedTab]
+    const { ...rest } = state.graphic_open
 
     const Contraste = rest.Contraste
-    const Filtro = rest.Filtro
+    const Filtro = rest.CPD
+
+    console.log({ Filtro })
     const NEstimulosAcertados = rest.NEstimulosAcertados
     const chartData = (Contraste || []).map((_, index) => ({
       index: index + 1,
@@ -61,12 +63,18 @@ export function OpacidadGraphic() {
     setMinx(minX)
   }, [chartData])
 
+  console.log({ chartData })
+
   return (
     <div className={styles.container} ref={targetRef}>
-      <button onClick={toPFD}>PDF</button>
+      {/* <button onClick={toPFD}>PDF</button> */}
       <h2 className={styles.title}>Resultados Sensibilidad al Contraste</h2>
-      <div className={styles.tabsContainer}>
-      {[{text: 'Ojo Izquierdo', val: 1}, {text: 'Ojo Derecho', val: 2}, {text: 'Ambos Ojos', val: 3}].map((el) => (
+      {/* <div className={styles.tabsContainer}>
+        {[
+          { text: 'Ojo Izquierdo', val: 1 },
+          { text: 'Ojo Derecho', val: 2 },
+          { text: 'Ambos Ojos', val: 3 },
+        ].map((el) => (
           <button
             data-selected={selectedTab === el.val}
             key={el.val}
@@ -75,7 +83,7 @@ export function OpacidadGraphic() {
             {el.text}
           </button>
         ))}
-      </div>
+      </div> */}
 
       <div className={styles.data}>
         <div className={styles.chart + ' ' + styles.container}>
@@ -98,7 +106,6 @@ export function OpacidadGraphic() {
                   dataKey='Filtro'
                   name='filtro'
                   unit=''
-                  domain={[minx, maxx]}
                 />
                 <YAxis
                   type='number'
@@ -129,7 +136,6 @@ export function OpacidadGraphic() {
                 <thead>
                   <tr>
                     <th>Índice</th>
-                    <th>Tamaño</th>
                     <th>NEstimulos</th>
                     <th>NEstimulosAcertados</th>
                     <th>Filtro</th>
@@ -137,29 +143,27 @@ export function OpacidadGraphic() {
                   </tr>
                 </thead>
                 <tbody>
-                  {state.graphic_open[selectedTab]['Tamaño'].map((_, index) => {
-                    const nEstimulosAcertados =
-                      state.graphic_open[selectedTab].NEstimulosAcertados[index]
+                  {/* {state.graphic_open.map((el, index) => {
+                    const {
+                      NEstimolosAcertados,
+                      NEstimulos,
+                      Contraste,
+                      Filtro,
+                    } = el
+
                     const isHighlighted =
-                      nEstimulosAcertados > umbralNEstimulosAcertados
+                      NEstimolosAcertados > umbralNEstimulosAcertados
                     const rowClassName = isHighlighted ? 'highlighted-row' : ''
                     return (
                       <tr key={index} className={styles[rowClassName]}>
                         <td>{index + 1}</td>
-                        <td>
-                          {state.graphic_open[selectedTab]['Tamaño'][index]}
-                        </td>
-                        <td>
-                          {state.graphic_open[selectedTab].NEstimulos[index]}
-                        </td>
-                        <td>{nEstimulosAcertados}</td>
-                        <td>{state.graphic_open[selectedTab].Filtro[index]}</td>
-                        <td>
-                          {state.graphic_open[selectedTab].Contraste[index]}
-                        </td>
+                        <td>{NEstimulos}</td>
+                        <td>{NEstimolosAcertados}</td>
+                        <td>{Filtro}</td>
+                        <td>{Contraste}</td>
                       </tr>
                     )
-                  })}
+                  })} */}
                 </tbody>
               </Table>
             )}

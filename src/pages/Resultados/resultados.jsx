@@ -49,9 +49,9 @@ export function Resultados() {
         dispatch({ type: 'setData', payload: data })
       })
       .catch((e) => {
-        console.log(e)
+        console.log(e.message, e.message === 'notfound', e instanceof Error)
         const errMessage =
-          e instanceof Error && e.message === 'notfound'
+          e?.message === 'notfound'
             ? params.id === loggedUser.id
               ? 'No se encontró ningún resultado asignado a tu dni. Descarga los tests en la pestaña de Pruebas Clínicas y realiza las pruebas.'
               : 'No se encontró ningún resultado asignado al dni del paciente.'

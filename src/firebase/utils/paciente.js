@@ -68,7 +68,7 @@ export const getPatientTests = async (dni, test) => {
   const docRef = doc(collection(db, test), dni)
   // Es necesario recuperar los datos del documento para después iterar las claves y recuperar los datos de la subcolección
   const testDoc = await getDoc(docRef).then((doc) => {
-    if (!doc.exists()) throw new Error('No se encontró el documento')
+    if (!doc.exists()) throw new Error('notfound')
     const data = doc.data()
     return data
   })

@@ -3,8 +3,6 @@ import { UserImage } from '../common/entry-placeholder/user-image/user-image'
 import styles from './write-modal-header.module.css'
 
 export function WriteModalHeader({ user, medic }) {
-  console.log({ user })
-
   return (
     <header className={styles.header}>
       <UserImage src={user?.image?.src} />

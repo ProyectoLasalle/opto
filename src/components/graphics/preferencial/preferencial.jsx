@@ -24,6 +24,8 @@ export function PreferencialGraphic() {
 
   const { state } = useContext(ResultsContext)
 
+  console.log(state)
+
   const document = useMemo(() => {
     const data = state.graphic_open[selectedTab]
 
@@ -173,7 +175,7 @@ export function PreferencialGraphic() {
         ))}
         <button className={styles.downloadIcon} onClick={handlePDF}>
           <DownloadIcon style={{ height: 25, width: 25 }} />
-          <span>PDF</span>P
+          <span>PDF</span>
         </button>
       </div>
       <div
