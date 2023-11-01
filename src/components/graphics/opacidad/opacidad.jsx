@@ -126,10 +126,10 @@ export function OpacidadGraphic() {
                 <thead>
                   <tr>
                     <th>Índice</th>
-                    <th>NEstimulos</th>
-                    <th>NEstimulosAcertados</th>
                     <th>CPD</th>
                     <th>Contraste</th>
+                    <th>NEstimulos</th>
+                    <th>NEstimulosAcertados</th>
                   </tr>
                 </thead>
                 <tbody>
@@ -142,8 +142,6 @@ export function OpacidadGraphic() {
                     return (
                       <tr key={index} className={styles[rowClassName]}>
                         <td>{parseInt(indexToShow) + 1}</td>
-                        <td>{state.graphic_open.NEstimulos[index]}</td>
-                        <td>{nEstimulosAcertados}</td>
                         <td>{state.graphic_open.CPD[index]}</td>
                         <td>
                           {parseFloat(
@@ -151,6 +149,8 @@ export function OpacidadGraphic() {
                           ).toFixed(2)}
                           %
                         </td>
+                        <td>{state.graphic_open.NEstimulos[index]}</td>
+                        <td>{nEstimulosAcertados}</td>
                       </tr>
                     )
                   })}
