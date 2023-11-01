@@ -69,7 +69,7 @@ export function OpacidadGraphic() {
     <div className={styles.container} ref={targetRef}>
       {/* <button onClick={toPFD}>PDF</button> */}
       <h2 className={styles.title}>Resultados Sensibilidad al Contraste</h2>
-      {/* <div className={styles.tabsContainer}>
+      <div className={styles.tabsContainer}>
         {[
           { text: 'Ojo Izquierdo', val: 1 },
           { text: 'Ojo Derecho', val: 2 },
@@ -83,7 +83,7 @@ export function OpacidadGraphic() {
             {el.text}
           </button>
         ))}
-      </div> */}
+      </div>
 
       <div className={styles.data}>
         <div className={styles.chart + ' ' + styles.container}>
@@ -143,27 +143,22 @@ export function OpacidadGraphic() {
                   </tr>
                 </thead>
                 <tbody>
-                  {/* {state.graphic_open.map((el, index) => {
-                    const {
-                      NEstimolosAcertados,
-                      NEstimulos,
-                      Contraste,
-                      Filtro,
-                    } = el
-
+                  {state.graphic_open['CPD'].map((_, index) => {
+                    const nEstimulosAcertados =
+                      state.graphic_open.NEstimulosAcertados[index]
                     const isHighlighted =
-                      NEstimolosAcertados > umbralNEstimulosAcertados
+                      nEstimulosAcertados > umbralNEstimulosAcertados
                     const rowClassName = isHighlighted ? 'highlighted-row' : ''
                     return (
                       <tr key={index} className={styles[rowClassName]}>
                         <td>{index + 1}</td>
-                        <td>{NEstimulos}</td>
-                        <td>{NEstimolosAcertados}</td>
-                        <td>{Filtro}</td>
-                        <td>{Contraste}</td>
+                        <td>{state.graphic_open.NEstimulos[index]}</td>
+                        <td>{nEstimulosAcertados}</td>
+                        <td>{state.graphic_open.CPD[index]}</td>
+                        <td>{state.graphic_open.Contraste[index]}</td>
                       </tr>
                     )
-                  })} */}
+                  })}
                 </tbody>
               </Table>
             )}
