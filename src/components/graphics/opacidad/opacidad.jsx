@@ -45,7 +45,7 @@ export function OpacidadGraphic() {
       Contraste: Contraste[index],
       Filtro: CPD[index],
       NEstimulosAcertados: NEstimulosAcertados[index],
-      indice: externalIndex,
+      indice: parseInt(externalIndex) + 1,
     }))
 
     setChartData(chartData)
@@ -133,7 +133,7 @@ export function OpacidadGraphic() {
                   </tr>
                 </thead>
                 <tbody>
-                  {state.graphic_open['CPD'].map((_, index) => {
+                  {state.graphic_open['indice'].map((indexToShow, index) => {
                     const nEstimulosAcertados =
                       state.graphic_open.NEstimulosAcertados[index]
                     const isHighlighted =
@@ -141,7 +141,7 @@ export function OpacidadGraphic() {
                     const rowClassName = isHighlighted ? 'highlighted-row' : ''
                     return (
                       <tr key={index} className={styles[rowClassName]}>
-                        <td>{index + 1}</td>
+                        <td>{parseInt(indexToShow) + 1}</td>
                         <td>{state.graphic_open.NEstimulos[index]}</td>
                         <td>{nEstimulosAcertados}</td>
                         <td>{state.graphic_open.CPD[index]}</td>
