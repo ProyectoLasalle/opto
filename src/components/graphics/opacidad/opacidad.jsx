@@ -39,18 +39,13 @@ export function OpacidadGraphic() {
   useEffect(() => {
     const max = Math.max(...state.graphic_open.NEstimulosAcertados)
     setUmbralNEstimulosAcertados(max / 2)
-    const { ...rest } = state.graphic_open
+    const { CPD, indice, Contraste, NEstimulosAcertados } = state.graphic_open
 
-    const Contraste = rest.Contraste
-    const Filtro = rest.CPD
-
-    console.log({ Filtro })
-    const NEstimulosAcertados = rest.NEstimulosAcertados
-    const chartData = (Contraste || []).map((_, index) => ({
-      index: index + 1,
+    const chartData = indice.map((externalIndex, index) => ({
       Contraste: Contraste[index],
-      Filtro: Filtro[index],
+      Filtro: CPD[index],
       NEstimulosAcertados: NEstimulosAcertados[index],
+      indice: externalIndex,
     }))
 
     setChartData(chartData)
@@ -101,18 +96,13 @@ export function OpacidadGraphic() {
                 }}>
                 <CartesianGrid strokeDasharray='3 3' />
                 <XAxis
-                  ticks={[-5, 1, 5, 10, 15]}
+                  ticks={[1, 5, 10, 15, 20]}
                   type='number'
                   dataKey='Filtro'
                   name='filtro'
                   unit=''
                 />
-                <YAxis
-                  type='number'
-                  dataKey='Contraste'
-                  name='contraste'
-                  unit=''
-                />
+                <YAxis type='number' dataKey='indice' name='indice' unit='' />
                 <Tooltip cursor={{ strokeDasharray: '3 3' }} />
                 <Scatter name='A data' data={chartData}>
                   {chartData.map((entry, index) => (
@@ -138,7 +128,7 @@ export function OpacidadGraphic() {
                     <th>Índice</th>
                     <th>NEstimulos</th>
                     <th>NEstimulosAcertados</th>
-                    <th>Filtro</th>
+                    <th>CPD</th>
                     <th>Contraste</th>
                   </tr>
                 </thead>
@@ -155,7 +145,12 @@ export function OpacidadGraphic() {
                         <td>{state.graphic_open.NEstimulos[index]}</td>
                         <td>{nEstimulosAcertados}</td>
                         <td>{state.graphic_open.CPD[index]}</td>
-                        <td>{state.graphic_open.Contraste[index]}</td>
+                        <td>
+                          {parseFloat(
+                            state.graphic_open.Contraste[index],
+                          ).toFixed(2)}
+                          %
+                        </td>
                       </tr>
                     )
                   })}
