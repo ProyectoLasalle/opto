@@ -8,7 +8,12 @@ import { UserImage } from '../../common/entry-placeholder/user-image/user-image'
 
 export function ResultsRow({ data }) {
   const { dispatch, state } = useContext(ResultsContext)
+  const { selected_test } = state
+  const isOpacityRow = selected_test.key === 'Terapia2'
+
   const user = useUser()
+
+  console.log({ data })
 
   const handleSee = useCallback(() => {
     dispatch({ type: 'openGraphic', payload: data })
@@ -39,16 +44,18 @@ export function ResultsRow({ data }) {
   }, [data.notes])
 
   const parsedDate = useMemo(() => {
-    if (!data[1]?.Fecha) return 'Unknown'
-    const [year, month, day] = data[1].Fecha.split('-')
+    const dataToParse = isOpacityRow ? data : data[1]
+    if (!dataToParse?.Fecha) return 'Unknown'
+    const [year, month, day] = dataToParse.Fecha.split('-')
     return `${day}/${month}/${year.substring(2, 4)}`
-  }, [data])
+  }, [data, isOpacityRow])
 
   const parsedHour = useMemo(() => {
-    if (!data[1]?.Hora) return ''
-    const [hour, minutes] = data[1].Hora.split('-')
+    const dataToParse = isOpacityRow ? data : data[1]
+    if (!dataToParse?.Hora) return ''
+    const [hour, minutes] = dataToParse.Hora.split('-')
     return `${hour}:${minutes}`
-  }, [data])
+  }, [data, isOpacityRow])
 
   console.log({ parsedHour })
 

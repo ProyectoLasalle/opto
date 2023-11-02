@@ -10,6 +10,8 @@ export function ResultsTable({ pageUser }) {
   const { state } = useContext(ResultsContext)
   const loggedUser = useUser()
 
+  console.log({ state })
+
   if (state.data.loading) {
     return (
       <div className={styles.tableSkeleton}>
