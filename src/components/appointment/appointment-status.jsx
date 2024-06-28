@@ -71,7 +71,7 @@ export function AppointmentStatus({
     setIsCancelling(true)
   }
 
-  const confirm = new URLSearchParams(location.search).get('confirm')
+  const confirm = new URLSearchParams(window.location.search).get('confirm')
 
   useEffect(() => {
     if (user === USER_POSSIBLE_STATES.NOT_KNOWN) return

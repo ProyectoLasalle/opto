@@ -25,7 +25,7 @@ export function CancelAppointmentModal({ closeModal, data, setData }) {
     const { reason } = Object.fromEntries(new FormData(e.target))
 
     const setByAdmin = user.role === 'admin'
-    const url = location.pathname
+    const url = window.location.pathname
     const patient = data.patientData
     const doctor = data.doctorData
     const date = data.content.date
