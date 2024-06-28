@@ -1,0 +1,35 @@
+.buttons {
+  display: flex;
+  column-gap: 50px;
+  margin-bottom: 20px;
+
+}
+.buttonContainer {
+  position: relative;
+  overflow: hidden;
+}
+.buttons button {
+  border: none;
+  background-color: transparent;
+  font-size: 22px;
+  position: relative;
+  overflow: hidden;
+  cursor: pointer;
+}
+.line {
+  position: absolute;
+  width: 100%;
+  height: 2px;
+  bottom: 0;
+  left: 100%;
+  transition: left .2s ease;
+  background-color: var(--azul-profundo);
+  pointer-events: none;
+}
+.buttons button:hover ~ .line {
+  left: 0;
+}
+.buttonContainer[data-selected=true] .line {
+  left: 0!important;
+  background-color: var(--azul-oscuro);
+}

@@ -1,0 +1,149 @@
+.App {
+  display: flex;
+  flex-direction: column;
+  min-height: 100vh;
+  margin-top: 2rem;
+  font-family: Arial, sans-serif;
+}
+
+.content {
+  flex: 1;
+  width: 100%;
+  padding: 20px;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  overflow-x: auto;
+  background-color: #ffffff;
+}
+
+.highlightedRow {
+  background-color: green;
+}
+
+.tableContainer {
+  width: 100%;
+  flex: 1;
+  border: 1px solid #ddd;
+  border-radius: 4px;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+  padding: 20px;
+}
+
+.table {
+  width: 100%;
+  border-collapse: collapse;
+  animation: fadeIn 0.5s;
+}
+
+@keyframes fadeIn {
+  0% {
+    opacity: 1;
+  }
+
+  100% {
+    opacity: 1;
+  }
+}
+
+.table th,
+.table td {
+  padding: 10px;
+  text-align: center;
+  border: 1px solid #ddd;
+}
+
+.table th {
+  background-color: #f2f2f2;
+  font-weight: bold;
+}
+
+.table tbody tr:hover {
+  background-color: #f9f9f9;
+  cursor: pointer;
+  transition: background-color 0.3s;
+}
+
+.greenRow {
+  background-color: #6fcf6f !important;
+
+  transition: background-color 0.3s, color 0.3s;
+}
+
+.navbar {
+  background-color: #f2f2f2;
+  padding: 10px;
+  border-radius: 4px;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+  margin-bottom: 20px;
+}
+
+.navbar .navLink {
+  color: #000;
+  margin-bottom: 10px;
+  transition: background-color 0.3s;
+}
+
+.navbar .navLink:hover {
+  background-color: #e6e6e6;
+  color: #000;
+}
+
+.navbar .navLink.active {
+  background-color: #ccc;
+  color: #000;
+}
+
+.chartContainer {
+  flex: 1;
+  width: 100%;
+}
+
+/* Estilos para el gráfico */
+.Recharts-responsiveContainer {
+  animation: fadeIn 0.5s;
+}
+
+.tabsContainer {
+  display: flex;
+}
+
+.tab {
+  border-top-left-radius: 10px;
+  padding: 2px 0;
+  border-top-right-radius: 10px;
+  border: 2px solid black;
+  border-left: none;
+  background-color: transparent;
+  width: 140px;
+  cursor: pointer;
+}
+
+.tab:first-of-type {
+  border-left: 2px solid black;
+}
+
+.tab[data-selected='true'] {
+  background-color: var(--azul-profundo);
+  color: white;
+}
+
+.title {
+  margin: 0 auto 20px auto;
+  font-size: 30px;
+  font-weight: 600;
+}
+.downloadIcon {
+  align-self: flex-end;
+  display: flex;
+  gap: 8px;
+  align-items: center;
+  justify-content: center;
+  border-radius: 5px;
+  border: none;
+  background-color: var(--azul-profundo);
+  color: white;
+  padding: 5px;
+  margin-left: auto;
+  cursor: pointer;
+}

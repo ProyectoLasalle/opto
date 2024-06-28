@@ -1,0 +1,136 @@
+@import url('https://fonts.googleapis.com/css2?family=Lato&display=swap');
+
+@font-face {
+  font-family: 'Rubik';
+  src: url('../../public/fonts/Rubik-Regular.woff2') format('woff2');
+  font-weight: normal;
+}
+@font-face {
+  font-family: 'Rubik';
+  src: url('../../public/fonts/Rubik-Medium.ttf') format('ttf');
+  font-weight: 600 !important;
+}
+@font-face {
+  font-family: 'Rubik';
+  src: url('../../public/fonts/Rubik-Bold.woff2') format('woff2');
+  font-weight: bold;
+}
+
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+  font-family: Rubik, Lato, system-ui, -apple-system, BlinkMacSystemFont,
+    'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue',
+    sans-serif;
+}
+
+:root {
+  --amarillo: 246 170 0;
+
+  --azul-oscuro: #091d36;
+  --azul-profundo: #3a4e7a;
+  --azul-intermedio: #5e83ba;
+  --azul-claro: #c2d2e9;
+  --semi-blanco: #f4f4f4;
+  --toastify-color-light: var(--azul-profundo);
+  --toastify-text-color-light: white;
+
+  --destructive: hsl(0 100% 50%);
+  --destructive-foreground: hsl(210 40% 98%);
+
+  --neutral-600: #525252;
+  --neutral-700: #404040;
+  --neutral-800: #262626;
+  --neutral-900: #18181b;
+  --neutral-950: #09090b;
+
+  --navbar-height: 80px;
+  --nav-link-color: rgb(155, 155, 155);
+
+  --shadow-color: 0deg 0% 0%;
+  --shadow: 0px 0px 5px -1px rgba(0, 0, 0, 0.59);
+  --shadow-low: -0.3px 0.3px 0.5px hsl(var(--shadow-color) / 0.19),
+    -5px 6.2px 2.7px -4.5px hsl(var(--shadow-color) / 0.19);
+  --shadow-medium: -0.3px 0.3px 0.5px hsl(var(--shadow-color) / 0.22),
+    -5px 5.5px 8.4px -2.5px hsl(var(--shadow-color) / 0.22);
+  --shadow-medium-right: -0.3px 0.3px 0.5px hsl(var(--shadow-color) / 0.22),
+    5px 5.5px 8.4px -2.5px hsl(var(--shadow-color) / 0.22);
+  --shadow-high: -0.3px 0.3px 0.5px hsl(var(--shadow-color) / 0.27),
+    -5.7px 6.2px 9.5px -1.2px hsl(var(--shadow-color) / 0.27),
+    -25.1px 27.4px 41.8px -2.5px hsl(var(--shadow-color) / 0.27);
+
+  /* FULLCALENDAR CUSTOMIZATION */
+
+  --fc-button-text-color: white;
+  --fc-button-bg-color: rgb(var(--amarillo) / 0.8);
+  --fc-button-border-color: rgb(var(--amarillo) / 0.8);
+  --fc-hover-bg-color: var(--azul-profundo);
+
+  --fc-event-bg-color: var(--azul-claro);
+
+  --fc-today-bg-color: var(--azul-profundo);
+}
+
+.fc-col-header-cell-cushion,
+.fc-toolbar-title {
+  text-transform: capitalize;
+}
+
+.fc-day {
+  overflow: hidden;
+}
+
+.fc-day-today {
+  background-color: var(--azul-profundo);
+  color: white;
+}
+
+html,
+body {
+  height: 100%;
+}
+body {
+  line-height: 1.5;
+  -webkit-font-smoothing: antialiased;
+}
+img,
+picture,
+video,
+canvas,
+svg {
+  display: block;
+  max-width: 100%;
+}
+input,
+button,
+textarea,
+select {
+  font: inherit;
+}
+p,
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+  overflow-wrap: break-word;
+}
+a {
+  color: inherit;
+  text-decoration: none;
+  background-color: inherit;
+}
+div#userImage {
+  background-color: var(--azul-profundo);
+  height: 36px;
+  width: 36px;
+  border-radius: 9999px;
+  box-shadow: var(--shadow-medium);
+}
+.day-cell {
+  overflow: hidden;
+}

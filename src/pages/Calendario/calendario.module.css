@@ -1,0 +1,34 @@
+.main,
+.loadingUser {
+  min-height: calc(100vh - var(--navbar-height));
+  width: 100%;
+  max-width: 1150px;
+  margin: 0 auto;
+  padding: 2rem 0;
+  position: relative;
+}
+.loadingUser {
+  display: grid;
+  place-content: center;
+}
+.main {
+  display: flex;
+  flex-direction: column;
+}
+.event {
+  display: flex;
+  gap: 5px;
+}
+
+.loading {
+  height: 100%;
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  position: absolute;
+  top: 10px;
+  left: 0;
+  background-color: white;
+  z-index: 10;
+}

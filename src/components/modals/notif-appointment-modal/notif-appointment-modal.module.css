@@ -1,0 +1,65 @@
+.modal {
+  padding: 20px;
+  background-color: white;
+  border-radius: 10px;
+  animation: fade 0.2s ease-in-out;
+  width: 100%;
+  max-width: 300px;
+  display: flex;
+  flex-direction: column;
+  text-align: center;
+}
+.header {
+  display: flex;
+  flex-direction: column;
+}
+.header h4 {
+  font-weight: 600;
+  font-size: 30px;
+  margin-bottom: 20px;
+}
+.header img {
+  object-fit: contain;
+  margin-bottom: 10px;
+}
+
+.modal p {
+  font-size: 0.9rem;
+}
+
+.doctor,
+.date {
+  color: var(--azul-profundo);
+  font-weight: 600;
+  display: block;
+}
+
+.confirmP {
+  margin-top: 20px;
+}
+
+.see {
+  background-color: rgb(var(--amarillo) / 0.8);
+  transition: background-color 0.2s ease-in-out;
+  padding: 4px 0;
+  color: white;
+  border-radius: 5px;
+  margin-top: 10px;
+  border: none;
+  cursor: pointer;
+}
+
+.see:hover {
+  background-color: rgb(var(--amarillo) / 1);
+}
+
+@keyframes fade {
+  from {
+    transform: translateY(10px);
+    opacity: 0;
+  }
+  to {
+    transform: translateY(0);
+    opacity: 1;
+  }
+}

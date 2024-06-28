@@ -1,0 +1,62 @@
+.aside {
+  padding: 15px 1rem;
+  border-radius: 5px;
+  box-shadow: var(--shadow-low);
+  display: flex;
+  max-height: 90px;
+  overflow: hidden;
+  align-items: flex-start;
+  transition: max-height .4s ease;
+}
+.navTitle {
+  font-size: 20px;
+  text-align: center;
+  font-weight: 600;
+  width: 150px;
+  display: flex;
+  align-items: center;
+}
+.buttonsContainer {
+  display: flex;
+  row-gap: 25px;
+  flex: 1;
+  padding: 0 .5rem;
+  flex-wrap: wrap;
+  column-gap: 1px;
+  max-height: 400px;
+  overflow: auto;
+}
+.buttonsContainer button, .more {
+  aspect-ratio: 1;
+  background-color: transparent;
+  border: none;
+  font-size: 20px;
+  height: 55px;
+  width: 55px;
+  font-weight: bold;
+  position: relative;
+  transition: .15s ease-in-out;
+  cursor: pointer;
+}
+button.more {
+  font-size: 15px!important;
+  font-weight: 600!important;
+  background-color: rgba(0, 0, 0, .1);
+  padding: 1px;
+}
+.buttonsContainer button:hover, .more:hover {
+  background-color: var(--azul-claro);
+}
+.buttonsContainer button[data-selected=true] {
+  background-color: rgb(var(--amarillo));
+  color: white
+}
+.buttonsContainer button::after {
+  content: "";
+  background-color: rgba(0,0,0,.1);
+  height: 1px;
+  width: 80%;
+  left: 10%;
+  bottom: 0;
+  position: absolute;
+}

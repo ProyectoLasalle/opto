@@ -1,0 +1,124 @@
+.footer {
+  display: flex;
+  position: relative;
+  background: linear-gradient(to bottom left, rgb(255, 255, 255) 0%, rgb(248, 248, 248) 100%);
+  padding: 68px 15px;
+  box-shadow: 0px -0.3px 0.3px hsl(var(--shadow-color) / 0.22),
+    0px -5.2px 5.9px -2.5px hsl(var(--shadow-color) / 0.22);
+  align-items: center;
+  margin-top: .75rem;
+}
+
+.footer>div {
+  flex: 1;
+  display: flex;
+}
+
+.footer>.logo {
+  justify-content: center;
+  align-items: center;
+  height: 100%;
+}
+
+.footer>.logo>h4 {
+  font-size: 33px;
+  font-weight: bold;
+}
+
+.info {
+  flex-direction: column;
+  row-gap: 10px;
+  text-align: center;
+}
+
+.info h6 {
+  font-size: 20px;
+  text-align: center;
+
+}
+
+.info h6:last-of-type {
+  margin-bottom: 10px;
+}
+
+
+.copy {
+  position: absolute;
+  bottom: 2px;
+  right: 50%;
+  transform: translateX(50%);
+  font-size: 14px;
+  font-weight: 600;
+}
+
+.redes {
+  justify-content: center;
+  flex-direction: column;
+  text-align: center;
+}
+
+.redesMap {
+  display: grid;
+  margin-top: 10px;
+  grid-template-columns: auto auto auto auto;
+  gap: 10px;
+  place-content: center;
+}
+
+.redes p {
+  font-size: 20px;
+  font-weight: bold;
+}
+
+.icon {
+  background: black;
+  padding: 5px;
+  color: white;
+  border-radius: 50%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  transition: color .2s ease-in, background .2s ease-in
+}
+
+.youtube:hover {
+  color: #F61C0D;
+  background: transparent;
+}
+
+.facebook:hover {
+  color: white;
+  background: #3b5998;
+}
+
+.twitter:hover {
+  color: #00acee;
+  background: transparent;
+}
+
+.instagram {
+  position: relative;
+  overflow: hidden
+}
+
+.instagram svg {
+  position: relative
+}
+
+.instagram::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  opacity: 0;
+  background: -moz-linear-gradient(45deg, #f09433 0%, #e6683c 25%, #dc2743 50%, #cc2366 75%, #bc1888 100%);
+  background: -webkit-linear-gradient(45deg, #f09433 0%, #e6683c 25%, #dc2743 50%, #cc2366 75%, #bc1888 100%);
+  background: linear-gradient(45deg, #f09433 0%, #e6683c 25%, #dc2743 50%, #cc2366 75%, #bc1888 100%);
+  transition: opacity .2s ease-in;
+}
+
+.instagram:hover::before {
+  opacity: 1;
+}

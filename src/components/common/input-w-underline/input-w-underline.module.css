@@ -1,0 +1,33 @@
+.inputContainer input {
+  padding: 5px 10px;
+  border-radius: 5px;
+  border: none;
+  border-radius: 1px;
+  border: 2px solid transparent;
+  transition: border-color 0.2s ease;
+  margin-top: 5px;
+  color: black;
+  outline: none;
+  width: 100%;
+}
+.inputParent {
+  width: 100%;
+  position: relative;
+  overflow: hidden;
+  box-shadow: var(--shadow-low);
+  display: flex;
+}
+.inputBrother {
+  position: absolute;
+  width: 100%;
+  height: 2px;
+  bottom: 0;
+  left: 100%;
+  transition: left 0.2s ease;
+  background-color: var(--azul-profundo);
+}
+
+.inputParent input:focus-visible ~ .inputBrother,
+.inputParent textarea:focus-visible ~ .inputBrother {
+  left: 0;
+}

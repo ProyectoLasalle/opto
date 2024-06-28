@@ -1,0 +1,61 @@
+.modal {
+  background-color: white;
+  display: flex;
+  flex-direction: column;
+  width: 100%;
+  max-width: 400px;
+  padding: 20px;
+  border-radius: 10px;
+  animation: fade 0.2s ease-in-out;
+}
+
+.modal p {
+  margin-bottom: 20px;
+  display: block;
+  font-weight: 600;
+  text-align: center;
+  color: rgba(0, 0, 0, 0.8);
+}
+
+.modal h2 {
+  font-size: 25px;
+  margin-bottom: 5px;
+  color: var(--azul-profundo);
+  text-align: center;
+}
+
+.modal input {
+  width: 100%;
+  outline: none;
+  padding: 5px 10px;
+}
+
+.modal button {
+  background-color: rgb(var(--amarillo) / 0.9);
+  color: white;
+  border: none;
+  border-radius: 5px;
+  margin-top: 10px;
+  height: 35px;
+  cursor: pointer;
+}
+
+.modal button:hover {
+  background-color: rgb(var(--amarillo) / 1);
+}
+
+.modal button:disabled {
+  background-color: rgb(var(--amarillo) / 0.5);
+  cursor: not-allowed;
+}
+
+@keyframes fade {
+  from {
+    opacity: 0;
+    transform: translateY(10px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0px);
+  }
+}

@@ -1,0 +1,7 @@
+.userImage {
+  height: 36px;
+  width: 36px;
+  border-radius: 9999px;
+  box-shadow: var(--shadow-low);
+  object-fit: cover;
+}

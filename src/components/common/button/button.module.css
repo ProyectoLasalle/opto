@@ -1,0 +1,31 @@
+.button {
+  border: none;
+  background-color: var(--neutral-800);
+  border-radius: 3px;
+  color: white;
+  padding: 5px 12px;
+  text-align: center;
+  text-decoration: none;
+  display: inline-block;
+  font-size: 16px;
+  margin: 4px 2px;
+  transition-duration: 0.4s;
+  cursor: pointer;
+  transition: opacity 0.1s ease-in-out;
+}
+
+.button:hover {
+  opacity: 0.9;
+}
+
+.button[data-variant='destructive'] {
+  background-color: var(--destructive);
+}
+
+.button[data-variant='secondary']:hover {
+  background-color: var(--neutral-600);
+}
+
+.button[data-variant='colored'] {
+  background-color: var(--azul-profundo);
+}
