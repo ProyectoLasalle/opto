@@ -1,0 +1,85 @@
+.modalBackground {
+  background-color: rgba(0,0,0,.2);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  position: fixed;
+  top: 0;
+  left: 0;
+  height: 100%;
+  width: 100%;
+  z-index: 100;
+  animation: fade .2s;
+}
+.modal {
+  display: flex;
+  flex-direction: column;
+  background-color:white;
+  color: black;
+  border-radius: 10px;
+  padding: 1rem 1.5rem 1rem 1.5rem;
+  row-gap: 10px;
+  width: 100%;
+  max-width: 500px;
+  position: relative;
+  overflow: hidden;
+}
+.modal h4 {
+  font-size: 24px;
+  text-align: center;
+}
+.modal span {
+  line-height: 1;
+}
+.buttons {
+  width: 100%;
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  column-gap: 10px;
+  margin-top: 10px;
+}
+.buttons button {
+  padding: 6px;
+  border: none;
+  border-radius: 2px;
+  background-color: rgb(220, 220, 220);
+  cursor: pointer;
+  font-weight: 600;
+  transition: .3s ease;
+}
+.buttons button:last-of-type {
+  background-color: rgb(226, 63, 63);
+  color: white;
+}
+.buttons button:last-of-type:hover {
+  background-color: red;
+}
+.loading {
+  position: absolute;
+  top: 0;
+  left: 0;
+  height: 100%;
+  width: 100%;
+  background-color: transparent;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  pointer-events: none;
+  transition: background-color .2s ease-in-out;
+}
+.loading[data-loading=true] {
+  background-color: rgba(0,0,0,.3);
+  pointer-events: all;
+}
+
+
+
+
+@keyframes fade {
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 1
+  }
+}

@@ -1,0 +1,64 @@
+.section {
+  display: flex;
+  flex-direction: column;
+  row-gap: 1rem;
+}
+.section h2, .section h1 {
+  font-weight: normal;
+  text-align: center;
+  color: var(--azul-oscuro);
+  font-size: 35px;
+  margin: 0;
+}
+.titleContainer {
+  margin-bottom: 1.25rem;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  column-gap: 2rem;
+}
+.testsContainer {
+  display: flex;
+  justify-content: center;
+  column-gap: 12px;
+}
+.buttonsContainer {
+  display: flex;
+  column-gap: 10px;
+  justify-content: space-between;
+  margin-top: 12px;
+}
+
+.test1 {
+  background-color: var(--semi-blanco);
+  box-shadow: var(--shadow-medium);
+  border-radius: 10px;
+  width: 100%;
+  max-width: 400px;
+  color: var(--azul-oscuro);
+  text-align: center;
+  padding: 1rem 2rem 2rem;
+  row-gap: 12px;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+}
+.test1 header {
+  font-weight: bold;
+  font-size: 30px;
+  color: var(--azul-profundo)
+}
+.test1 button, .buttonsContainer a, .titleContainer button  {
+  border: none;
+  padding: 8px 18px;
+  border-radius: 5px;
+  cursor: pointer;
+  background-color: rgb(var(--amarillo));
+  transition: .1s ease-in-out;
+  box-shadow: var(--shadow-medium);
+  font-weight: bold;
+}
+.test1 button:hover, .buttonsContainer a:hover, .titleContainer button:hover {
+  background-color: var(--azul-oscuro);
+  color: white;
+}

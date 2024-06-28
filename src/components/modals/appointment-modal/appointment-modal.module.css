@@ -1,0 +1,140 @@
+.modalBackground {
+  position: fixed;
+  overflow: hidden;
+  top: 0;
+  left: 0;
+  width: 100vw;
+  height: 100vh;
+  background-color: rgba(0, 0, 0, 0.5);
+  z-index: 100;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  animation: fadeIn 0.15s ease-in-out;
+}
+
+.modal {
+  width: 100%;
+  position: relative;
+  max-width: 460px;
+  max-height: 80%;
+  background-color: white;
+  border-radius: 10px;
+  display: flex;
+  gap: 12px;
+  flex-direction: column;
+  justify-content: space-between;
+  align-items: center;
+  padding: 30px 20px;
+  position: relative;
+  animation: fadeInWithMovement 0.15s ease-in-out;
+}
+
+.modal h3 {
+  font-size: 30px;
+  font-weight: 600;
+  margin-bottom: 25px;
+}
+
+.name {
+  position: absolute;
+  top: 8px;
+  left: 10px;
+  font-size: 12px;
+  color: var(--azul-profundo);
+  font-weight: 600;
+}
+
+.form {
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+  width: 100%;
+}
+
+.form input {
+  width: 100%;
+}
+
+.doubleInput {
+  display: flex;
+  gap: 20px;
+  width: 100%;
+}
+
+.formGroup {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  gap: 2px;
+}
+
+.formGroup label {
+  font-size: 0.8rem;
+  font-weight: 600;
+}
+
+.submit {
+  margin-top: 25px;
+  height: 35px;
+  background-color: rgb(var(--amarillo) / 0.8);
+  border-radius: 5px;
+  border: none;
+  font-size: 1rem;
+  cursor: pointer;
+  transition: all 0.2s ease-in-out;
+}
+
+.submit:hover {
+  background-color: rgb(var(--amarillo));
+}
+
+.advise {
+  font-size: 0.8rem;
+  color: var(--azul-profundo);
+  font-weight: 600;
+  margin-bottom: -40px;
+  text-align: center;
+}
+
+.noDoctor,
+.loading {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  border-radius: 10px;
+  padding: 25px;
+  color: white;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  transition: background-color 0.2s ease-in-out;
+}
+
+.noDoctor {
+  background-color: rgba(200, 11, 11, 0.7);
+}
+.loading {
+  background-color: rgba(0, 0, 0, 0.4);
+}
+
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
+  }
+}
+@keyframes fadeInWithMovement {
+  from {
+    transform: translateY(15px);
+    opacity: 0;
+  }
+  to {
+    transform: translateY(0);
+    opacity: 1;
+  }
+}

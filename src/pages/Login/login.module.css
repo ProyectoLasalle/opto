@@ -1,0 +1,88 @@
+.main {
+  height: calc(100vh - var(--navbar-height));
+  display: grid;
+  grid-template-columns: 1.3fr 1fr;
+}
+
+.main>* {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.sectionForm {
+  background-color: var(--azul-oscuro);
+}
+
+.sectionLogo {
+  background-color: var(--semi-blanco);
+}
+
+.sectionForm form {
+  padding: 15px;
+  background-color: var(--semi-blanco);
+  border-radius: 8px;
+  flex-direction: column;
+  width: 100%;
+  max-width: 500px;
+  min-height: 80%;
+  display: flex;
+}
+
+.sectionForm h1 {
+  font-size: 30px;
+  font-weight: normal;
+}
+
+.inputs {
+  display: flex;
+  flex-direction: column;
+  flex: 1;
+  justify-content: space-evenly;
+}
+
+.inputs>div {
+  row-gap: 12px;
+  display: flex;
+  flex-direction: column;
+}
+
+.sectionForm input {
+  padding: 10px 15px;
+  font-weight: bold;
+  border: none;
+  border-bottom: 2px solid rgba(0, 0, 0, .3);
+  background-color: inherit;
+}
+
+.error {
+  height: 25px;
+  color: red;
+}
+
+.sectionForm .submit {
+  height: 54px;
+  background-color: rgb(var(--amarillo));
+  color: white;
+  font-weight: bold;
+  border: none;
+  cursor: pointer;
+  transition: .15s ease-in-out
+}
+
+.sectionForm .submit:hover {
+  background-color: rgb(var(--amarillo)/.8);
+  color: black
+}
+
+.recover {
+  color: darkblue;
+  cursor: pointer;
+  background-color: transparent;
+  border: none;
+  width: max-content;
+}
+
+.recover:hover {
+  text-decoration: underline;
+}

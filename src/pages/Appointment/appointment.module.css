@@ -1,0 +1,155 @@
+.main {
+  min-height: calc(100vh - var(--navbar-height));
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  position: relative;
+}
+
+.loading {
+  width: 100%;
+  height: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.card {
+  padding: 25px;
+  width: 100%;
+  max-width: 400px;
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+  background-color: rgb(var(--amarillo) / 0.7);
+  border-radius: 10px;
+  position: relative;
+}
+
+.date {
+  position: absolute;
+  top: 2px;
+  right: 5px;
+  font-size: 0.7rem;
+  font-weight: 600;
+  color: var(--azul-profundo);
+}
+
+.header {
+  display: grid;
+  grid-template-columns: auto 1fr;
+  gap: 12px;
+}
+
+.header p {
+  font-size: 0.9rem;
+  font-weight: 600;
+}
+
+.vertical {
+  display: flex;
+  flex-direction: column;
+}
+
+.horizontal {
+  display: flex;
+}
+
+.asignado {
+  color: var(--azul-profundo);
+}
+
+.for {
+  font-size: 0.8rem;
+  font-weight: 600;
+  color: var(--azul-profundo);
+  margin-bottom: -15px;
+  text-align: center;
+}
+
+.body {
+  background-color: white;
+  padding: 10px;
+  border-radius: 10px;
+  display: flex;
+  flex-direction: column;
+}
+
+.body h1 {
+  text-align: center;
+  font-weight: 600;
+}
+
+.body p {
+  text-align: center;
+  font-size: 0.9rem;
+  margin-bottom: 10px;
+}
+
+.estado {
+  display: flex;
+  flex-direction: column;
+  background-color: var(--azul-profundo);
+  border-radius: 10px;
+  padding: 20px 0;
+  color: white;
+}
+
+.estado > p {
+  text-align: center;
+  font-weight: 600;
+  font-size: 0.9rem;
+  margin-bottom: 10px;
+}
+
+.estado > .horizontal > div {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
+.status {
+  padding: 2px 5px;
+  border-radius: 4px;
+  background-color: rgb(var(--amarillo));
+}
+
+.buttons {
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  gap: 1rem;
+  margin-top: 2rem;
+}
+
+.buttons button {
+  padding: 5px 10px;
+  border-radius: 5px;
+  cursor: pointer;
+  border: none;
+  background-color: rgb(18, 176, 47);
+  font-weight: 600;
+  font-size: 0.95rem;
+  color: white;
+}
+
+.postponement {
+  background-color: gray !important;
+}
+
+.buttons button:last-of-type {
+  background-color: red;
+}
+
+.back {
+  position: absolute;
+  top: 15px;
+  left: 15px;
+  color: black;
+  border: none;
+  cursor: pointer;
+  background-color: transparent;
+}

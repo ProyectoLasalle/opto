@@ -1,0 +1,11 @@
+[[redirects]]
+  from = "/*"
+  to = "/index.html"
+  status = 200
+
+
+[build.environment]
+  GENERATE_SOURCEMAP = "true"
+
+[build.production.environment]
+  GENERATE_SOURCEMAP = "false"

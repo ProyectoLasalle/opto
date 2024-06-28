@@ -1,0 +1,30 @@
+.main {
+  min-height: calc(100vh - var(--navbar-height));
+  display: flex;
+  flex-direction: row;
+  background-color: var(--semi-blanco);
+}
+
+.tableSection {
+  padding: 20px;
+  flex: 1;
+  margin: 0 auto;
+  display: flex;
+  flex-direction: column;
+  background-color: white;
+  border-radius: 20px;
+
+}
+
+.heading {
+  font-weight: bold;
+  color: var(--azul-profundo)
+}
+
+.loading {
+  height: calc(100vh - var(--navbar-height));
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}

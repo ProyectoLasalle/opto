@@ -1,0 +1,24 @@
+.skeleton {
+  --left-orientation: 90deg;
+  --left-size: 100px 100%;
+  --left-position: left -200px top 0;
+
+  --bottom-orientation: 0deg;
+  --bottom-size: 100% 150px;
+  --bottom-position: top -150px left 0;
+  --bottom-animation: bottom -150px left 0;
+
+
+  background-color: rgb(150,150,150);
+  background-image: linear-gradient(var(--left-orientation), rgba(50,50,50, 0), rgba(250,250,250, 0.5), rgba(50,50,50, 0));
+  background-size: var(--left-size);
+  background-repeat: no-repeat;
+  background-position: var(--left-position);
+  animation: left 2.5s ease infinite;
+  border-radius: 5px;
+}
+@keyframes left {
+  to {
+    background-position: right -200px top 0;
+  }
+}

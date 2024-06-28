@@ -1,0 +1,69 @@
+{
+  "name": "tesis-react",
+  "version": "0.1.0",
+  "private": true,
+  "dependencies": {
+    "@fullcalendar/core": "^6.1.8",
+    "@fullcalendar/daygrid": "^6.1.8",
+    "@fullcalendar/react": "^6.1.8",
+    "@testing-library/jest-dom": "^5.16.5",
+    "@testing-library/react": "^13.4.0",
+    "@testing-library/user-event": "^13.5.0",
+    "compressorjs": "^1.2.1",
+    "firebase": "^9.10.0",
+    "just-debounce-it": "^3.2.0",
+    "react": "^18.2.0",
+    "react-bootstrap": "^2.8.0",
+    "react-chartjs-2": "^5.2.0",
+    "react-dom": "^18.2.0",
+    "react-pdf": "^7.3.3",
+    "react-router-dom": "^6.14.1",
+    "react-scripts": "5.0.1",
+    "react-to-pdf": "^1.0.1",
+    "react-to-print": "^2.15.1",
+    "react-toastify": "^9.1.3",
+    "reactjs-popup": "^2.0.5",
+    "recharts": "^2.7.2",
+    "sweetalert2": "^11.6.8",
+    "web-vitals": "^2.1.4"
+  },
+  "scripts": {
+    "lint": "eslint -c .eslintrc.js --ext .js,.jsx .",
+    "lint:fix": "npm run lint -- --fix",
+    "start": "react-scripts start",
+    "build": "react-scripts build",
+    "test": "react-scripts test",
+    "eject": "react-scripts eject",
+    "format": "prettier --write \"src/**/*.{js,jsx}\""
+  },
+  "eslintConfig": {
+    "extends": [
+      "react-app",
+      "react-app/jest",
+      "prettier"
+    ]
+  },
+  "browserslist": {
+    "production": [
+      ">0.2%",
+      "not dead",
+      "not op_mini all"
+    ],
+    "development": [
+      "last 1 chrome version",
+      "last 1 firefox version",
+      "last 1 safari version"
+    ]
+  },
+  "devDependencies": {
+    "eslint": "^8.43.0",
+    "eslint-config-prettier": "^8.8.0",
+    "eslint-plugin-import": "^2.27.5",
+    "eslint-plugin-n": "^16.0.0",
+    "eslint-plugin-prettier": "^4.2.1",
+    "eslint-plugin-promise": "^6.1.1",
+    "eslint-plugin-react": "^7.32.2",
+    "jsdoc": "^4.0.2",
+    "prettier": "^2.8.8"
+  }
+}

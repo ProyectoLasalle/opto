@@ -1,0 +1,10 @@
+import styles from './asignacion-dashboard.module.css'
+
+export function TableError({ err, refetch }) {
+  return (
+    <div className={styles.errorContainer}>
+      <span>Ocurrió un error, {err}</span>
+      {refetch && <button onClick={refetch}>Volver a intentar</button>}
+    </div>
+  )
+}

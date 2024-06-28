@@ -1,0 +1,115 @@
+.main {
+  min-height: calc(100vh - var(--navbar-height));
+  display: flex;
+  padding: 2rem 0;
+  width: 100%;
+  max-width: 900px;
+  margin: 0 auto;
+  justify-content: space-between;
+}
+.loading {
+  height: calc(100vh - var(--navbar-height));
+  display: grid;
+  place-content: center;
+}
+.imageSection {
+  display: flex;
+  flex-direction: column;
+  background-color: var(--semi-blanco);
+  padding: 3rem;
+  height: max-content;
+  border-radius: 10px;
+  row-gap: 2rem;
+}
+.imagePlaceholder {
+  background-color: var(--azul-profundo);
+}
+.imagePlaceholder, .image {
+  width: 180px;
+  aspect-ratio: 1/1;
+  border-radius: 9999px;
+  box-shadow: var(--shadow-medium);
+  object-fit: cover;
+}
+.buttonsContainer {
+  display: flex;
+  flex-direction: column;
+  padding: 0 1rem;
+  row-gap: 5px;
+}
+.buttonsContainer button, .buttonsContainer label {
+  padding: 4px;
+  border-radius: 3px;
+  border: none;
+  color: white;
+  cursor: pointer;
+}
+.buttonsContainer label {
+  text-align: center;
+}
+.buttonsContainer label {
+  background-color: rgb(var(--amarillo));
+}
+.buttonsContainer button {
+  background-color: var(--azul-profundo);
+}
+.dataSection, .dataSection form {
+  display: flex;
+  flex-direction: column;
+  letter-spacing: 1px;
+}
+.dataSection form {
+  row-gap: 1rem;
+}
+h1 {
+  font-weight: normal;
+  font-size: 24px;
+  margin-bottom: .75rem;
+}
+.inputContainer {
+  display: flex;
+  flex-direction: column;
+}
+.inputContainer input, .inputContainer select {
+  border: 1px solid rgb(0 0 0 / .3);
+  border-radius: 8px;
+  padding: 8px 10px; 
+  width: 400px;
+}
+.dataSection form button[type=submit] {
+  align-self: flex-end;
+  width: 80px;
+  height: 32px;
+  background-color: rgb(var(--amarillo));
+  border: none;
+  border-radius: 4px;
+  color: white;
+  box-shadow: var(--shadow-medium);
+  cursor: pointer;
+}
+.dataSection form button[type=submit]:hover, .buttonsContainer label:hover {
+  background-color: rgb(var(--amarillo) / .8);
+  color: black
+}
+.dataSection form button[type=submit]:disabled {
+  cursor: not-allowed
+}
+.pageHolder {
+  position: fixed;
+  top: 0;
+  left: 0;
+  height: 100vh;
+  width: 100vw;
+  user-select: none;
+  pointer-events: none;
+  z-index: 10;
+  background-color: transparent;
+  transition: .15s ease-in;
+  display: grid;
+  place-content: center;
+}
+.pageHolder[data-loading=true] {
+  backdrop-filter: blur(1px);
+  background-color: rgba(0,0,0,.4);
+  pointer-events: all;
+}
