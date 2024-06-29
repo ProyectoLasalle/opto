@@ -14,7 +14,7 @@ export function Login() {
   const [password, setPassword] = useState('')
   const [verificationCode, setVerificationCode] = useState('')
   const [generatedCode, setGeneratedCode] = useState('')
-  const [userVerified, setUserVerified] = useState(false)
+  const [userCredentials, setUserCredentials] = useState({})
   const [loading, setLoading] = useState(false)
   const [error, setError] = useState(false)
   const user = useUser()
@@ -27,18 +27,18 @@ export function Login() {
       setError(false)
       setLoading(true)
       const res =
-        !userVerified && (await verifyUserCredentials(email, password))
+        !userCredentials?.idToken &&
+        (await verifyUserCredentials(email, password))
 
-      if (res?.idToken || userVerified) {
-        setUserVerified(true)
-        const { idToken, displayName, localId } = res
+      if (res?.idToken || userCredentials?.idToken) {
+        setUserCredentials(res)
+        const { idToken, displayName } = res || userCredentials
         const code = Math.floor(100000 + Math.random() * 900000).toString()
         await sendVerificationCode({
           email,
           code,
           idToken,
           displayName,
-          localId,
         })
         setGeneratedCode(code)
         toast.success('Revisa tu correo electrónico.')

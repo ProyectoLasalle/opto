@@ -66,7 +66,6 @@ export const iniciarSesion = async (email, password) => {
 export const sendVerificationCode = async ({
   email,
   displayName,
-  localId,
   code,
   idToken,
 }) => {
@@ -75,7 +74,6 @@ export const sendVerificationCode = async ({
       body: JSON.stringify({
         email,
         name: displayName,
-        localId,
         verificationCode: code,
       }),
       headers: {
